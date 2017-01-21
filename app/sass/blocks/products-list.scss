@@ -1,0 +1,89 @@
+.products-list {
+	display: none;
+	flex: 0 0 28%;
+	box-sizing: border-box;
+	height: 93%;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	white-space: nowrap;
+	/*background-color: green;*/
+
+	& li {
+		padding-left: 14%;
+		padding-right: 14%;
+		margin-bottom: 20px;
+
+		& a {
+			position: relative;
+			padding-top: 18px;
+			padding-left: 17%;
+			padding-bottom: 18px;
+			font-size: 16px;
+			line-height: 16px;
+			color: black;
+			border-bottom: 0px solid black;
+			border-bottom-width: 0px;
+
+			&::before {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 30px;
+				height: 100%;
+			}
+
+			&:after {
+				content: "";
+				display: block;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 0%;
+				height: 1px;
+				background-color: #000;
+				transition: width 0.5s ease 0s;
+			}
+
+			&:hover::after {
+				width: 100%;
+			}
+		}
+
+/*
+Общая высота элемента 70px
+Верхний, нижний отступы 18px
+Высота контента списка меню 34px
+Высота 1ой иконки 28px
+*/
+$products_qty: 5;
+$products_y_coord: 6;
+		&:nth-of-type(1) a::before {
+			background: url('../img/nav-sprite.png') 50% #{$products_y_coord}px no-repeat;
+			
+		}
+$products_y_coord: 64;
+@for $i from 2 through $products_qty {
+		&:nth-of-type(#{$i}) a::before {
+			background: url('../img/nav-sprite.png') 50% -#{$products_y_coord}px no-repeat;
+			$products_y_coord: $products_y_coord + 70;
+		}
+}
+	}
+}
+
+
+@media (max-height: 1024px) {
+	.products-list {
+		& li {
+			margin-bottom: 10px;
+			& a {
+				font-size: 14px;
+				line-height: 14px;
+			}
+		}
+	}
+}
+
+

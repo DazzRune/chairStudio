@@ -1,0 +1,49 @@
+.left-paginator {
+	font-family: 'Abril Fatface', cursive;
+}
+
+.left-paginator {
+	position: relative;
+	width: 4%;
+	height: 100%;
+	/*background-color: blue;*/
+}
+.left-paginator ul {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 7%;
+	font-size: 24px;
+	line-height: 24px;
+	text-align: center;
+
+	& li a {
+		padding: 20px 0;
+		color: #000;
+	}
+
+	& li .active {
+		color: #a9a9a9;
+		&:hover {
+			cursor: default;
+		}
+	}
+
+	& li:last-of-type a {
+		padding-bottom: 0;
+	}
+}
+
+
+@media (max-height: 1024px) {
+
+	.left-paginator ul {
+		font-size: 16px;
+		line-height: 16px;
+
+		& li a {
+			padding: 10px 0;
+		}
+	}
+
+}

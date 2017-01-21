@@ -1,0 +1,37 @@
+footer {
+	position: relative;
+	width: 4%;
+	height: 100%;
+	/*background-color: blue;*/
+}
+footer ul {
+	position: absolute;
+	top: 7%;
+	left: 0;
+	width: 100%;
+}
+footer a {
+	height: 20px;
+	padding: 20px 0;
+}
+footer li:first-of-type a {
+	padding-top: 0;
+}
+footer .fb {
+	background: url('../img/social-sprite.png') 50% 0% no-repeat content-box;
+}
+footer .inst {
+	background: url('../img/social-sprite.png') 50% 50% no-repeat content-box;
+}
+footer .be {
+	background: url('../img/social-sprite.png') 50% 100% no-repeat content-box;
+}
+
+
+@media (max-height: 1024px) {
+
+	footer a {
+		padding: 10px 0;
+	}
+
+}

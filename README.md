@@ -1,0 +1,1 @@
+Запуск: dist/index.html
